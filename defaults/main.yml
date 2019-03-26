@@ -1,0 +1,5 @@
+---
+# defaults file for ipam-role
+ipam_user: api
+subnet: 10.180.200.0
+cidr: 22
