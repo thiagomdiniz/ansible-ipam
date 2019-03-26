@@ -28,8 +28,8 @@ Role Variables
 Dependencies
 ------------
 
-Como não encontramos um módulo Ansible pronto para interação com o IPAM,
-criamos um script Python (get_free_addr.py) e colocamos dentro da estrutura de diretórios
+Como não encontrei um módulo Ansible pronto para interação com o IPAM,
+criei um script Python (get_free_addr.py) e coloquei dentro da estrutura de diretórios
 da Role para permitir o funcionamento adequado.
 
 Author Information
