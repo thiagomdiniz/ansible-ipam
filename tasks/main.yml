@@ -1,0 +1,16 @@
+---
+# tasks file for ipam-role
+
+- name: Get free IP Address
+  script: get_free_addr.py "{{ ipam_user }}" "{{ ipam_password }}" "{{ subnet }}" "{{ cidr }}"
+  register: result
+  delegate_to: localhost
+  changed_when: false
+
+- fail:
+    msg: "IPAM: Subrede nao encontrada! Retorno recebido: {{ result.stdout | regex_replace('\\n|\\r', '') }}"
+  when: result.stdout | regex_replace('\\n|\\r', '') == "Not found"
+
+- name: Show IP
+  debug:
+    msg: "IP disponivel para a subnet: {{ result.stdout | regex_replace('\\n|\\r', '') }}"
